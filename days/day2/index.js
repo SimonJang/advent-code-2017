@@ -43,7 +43,6 @@ const integerDivision = (numbers) => {
             }
         });
     });
-    console.log(resultTuple);
     return resultTuple.reduce(current => current);
 };
 exports.day2 = (values) => {
