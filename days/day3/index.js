@@ -3,8 +3,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const createGrid = (maxNumbers) => {
     let xCoord = 0;
     let yCoord = 0;
-    const previousX = xCoord;
-    const previousY = yCoord;
     let previous = 0;
     let current = 0;
     let up = true;
@@ -110,7 +108,7 @@ const createGrid = (maxNumbers) => {
         }
         value = x > 1 ? saveValue(value, searchValue(value, xCoord, yCoord), xCoord, yCoord) : value;
     }
-    return value;
+    return { x: xCoord, y: yCoord };
 };
 const saveValue = (value, result, xCoord, yCoord) => {
     if (value[xCoord]) {
@@ -134,9 +132,6 @@ const searchValue = (value, xCoord, yCoord) => {
     const area8 = value[xCoord - 1] ? value[xCoord - 1][yCoord - 1] : 0;
     const values = clean([area1, area2, area3, area4, area5, area6, area7, area8]);
     const result = values.reduce((previous, next) => previous + next);
-    if (result > 368078) {
-        console.log(result);
-    }
     return result;
 };
 const clean = (value) => {
