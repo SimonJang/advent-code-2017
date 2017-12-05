@@ -23,7 +23,6 @@ const equalStrings = (word1, word2) => {
     for (const char of word1) {
         wordPlaceholder = wordPlaceholder.replace(char, '');
     }
-    console.log(wordPlaceholder.length);
     return wordPlaceholder.trim().length === 0;
 };
 const compareStrings = (words, wordsMap) => {
@@ -38,7 +37,6 @@ const compareStrings = (words, wordsMap) => {
 exports.day4 = () => {
     const text = readFile();
     const sortedData = transformText(text);
-    console.log('Total amount of phrases', sortedData.length);
     let counter = 0;
     let unDecodable = 0;
     sortedData.forEach((phrase, index) => {
@@ -57,6 +55,6 @@ exports.day4 = () => {
         }
         counter += double ? 0 : 1;
     });
-    console.log('counter', counter);
-    console.log('unDecodable', unDecodable);
+    console.log('counter for unique phrases :: Part 1', counter);
+    console.log('unDecodable :: Part 2', unDecodable);
 };
