@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "@types/node": "^8.0.54"
+    "@types/node": "^8.0.54",
+    "@types/ramda": "^0.25.7",
+    "ramda": "^0.25.0"
   }
 }

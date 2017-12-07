@@ -20,6 +20,18 @@ const jump = (maze, jumps, position) => {
         currentPosition = nextPosition;
         nextPosition += maze[nextPosition];
         currentJumps += 1;
+        maze[currentPosition] += 1;
+    }
+    return currentJumps;
+};
+const jumpPart2 = (maze, jumps, position) => {
+    let nextPosition = position;
+    let currentJumps = jumps;
+    let currentPosition = position;
+    while (nextPosition < maze.length) {
+        currentPosition = nextPosition;
+        nextPosition += maze[nextPosition];
+        currentJumps += 1;
         maze[currentPosition] += maze[currentPosition] < 3 ? 1 : -1;
     }
     return currentJumps;
