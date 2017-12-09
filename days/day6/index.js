@@ -65,6 +65,8 @@ exports.day6 = () => {
     const stringifiedData = readFile();
     const data = formatData(stringifiedData);
     const snapshots = [];
-    const result = distributev2(data, snapshots, 1);
+    const result = distribute(data, snapshots, 1);
     console.log(result);
+    const resultv2 = distributev2(data, snapshots, 1);
+    console.log(resultv2);
 };
