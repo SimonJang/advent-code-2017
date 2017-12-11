@@ -41,9 +41,6 @@ const buildItem = (input) => {
     }
     return parsedData;
 };
-const convertStringDepToWeight = (dep, all) => {
-    return R.find((branch) => branch.name === dep)(all).weight;
-};
 const findAllDeps = (tree, deps) => {
     let newDeps = [...deps];
     for (const dep of deps) {
